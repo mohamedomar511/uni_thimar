@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:traning_uni_2/core/logic/texts.dart';
 import 'package:traning_uni_2/core/logic/textstyle.dart';
 import 'package:traning_uni_2/core/ui/logo_image.dart';
 import 'package:traning_uni_2/core/ui/password_textfield.dart';
 import 'package:traning_uni_2/core/ui/saudi_phone.dart';
-import 'package:traning_uni_2/core/ui/text_and_textbutton.dart';
+import 'package:traning_uni_2/core/ui/login_text_and_textbutton.dart';
 import 'package:traning_uni_2/core/ui/text_form_field.dart';
 
-class ClientRegister extends StatelessWidget {
-  const ClientRegister({super.key});
+class ClientRegisterView extends StatelessWidget {
+  const ClientRegisterView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(18),
+          padding: EdgeInsets.all(16.r),
           child: Directionality(
             textDirection: TextDirection.rtl,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const Center(child: LogoImage()),
-                const SizedBox(height: 16),
                 Align(alignment: Alignment.centerRight, child: helloAgainText),
-                const SizedBox(height: 8),
+                SizedBox(height: 8.h),
                 Align(
                   alignment: Alignment.centerRight,
                   child: Text(
@@ -32,26 +32,26 @@ class ClientRegister extends StatelessWidget {
                     style: styleWidgetSpan(),
                   ),
                 ),
-                const SizedBox(height: 23),
-                TextFormFieldWidget(
+                SizedBox(height: 23.h),
+                const TextFormFieldWidget(
                   labelText: 'اسم المستخدم',
                   prefixIcon: 'assets/icons/useremail.png',
                 ),
-                const SizedBox(height: 16),
+                SizedBox(height: 16.h),
                 const SaudiPhone(),
-                const SizedBox(height: 16),
-                TextFormFieldWidget(
+                SizedBox(height: 16.h),
+                const TextFormFieldWidget(
                   labelText: 'المدينة',
-                  prefixIcon: 'assets/icons/Report.png',
+                  prefixIcon: 'assets/icons/report.png',
                 ),
-                const SizedBox(height: 16),
-                PasswordTextfield(),
-                const SizedBox(height: 16),
-                PasswordTextfield(),
-                const SizedBox(height: 24),
+                SizedBox(height: 16.h),
+                const PasswordTextfield(),
+                SizedBox(height: 16.h),
+                const PasswordTextfield(),
+                SizedBox(height: 24.h),
                 FilledButton(onPressed: () {}, child: const Text('تسجيل')),
-                const SizedBox(height: 70),
-                const TextAndTextbutton(),
+                SizedBox(height: 28.h),
+                const LoginTextAndTextbutton(),
               ],
             ),
           ),

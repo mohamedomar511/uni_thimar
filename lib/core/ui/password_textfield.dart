@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PasswordTextfield extends StatelessWidget {
   const PasswordTextfield({super.key});
@@ -7,14 +8,14 @@ class PasswordTextfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(vertical: 20),
+        contentPadding: EdgeInsets.symmetric(vertical: 20.h),
         filled: true,
         fillColor: const Color(0xffFFFFFF),
-        prefixIcon: Image.asset('assets/icons/Unlock.png'),
+        prefixIcon: Image.asset('assets/icons/unlock.png'),
         labelText: 'كلمة المرور',
         labelStyle: TextStyle(
-          fontSize: 16,
-          color: Color(0xffAFAFAF),
+          fontSize: 16.sp,
+          color: const Color(0xffAFAFAF),
           fontWeight: FontWeight.w400,
         ),
         border: OutlineInputBorder(

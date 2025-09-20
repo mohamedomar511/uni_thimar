@@ -1,28 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:traning_uni_2/core/logic/navigate.dart';
 import 'package:traning_uni_2/core/logic/texts.dart';
 import 'package:traning_uni_2/core/logic/textstyle.dart';
 import 'package:traning_uni_2/core/ui/logo_image.dart';
 import 'package:traning_uni_2/core/ui/password_textfield.dart';
 import 'package:traning_uni_2/core/ui/saudi_phone.dart';
+import 'package:traning_uni_2/views/client_register/view.dart';
+import 'package:traning_uni_2/views/forget_password/view.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class LoginView extends StatelessWidget {
+  const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(18),
+          padding: EdgeInsets.all(16.r),
           child: Directionality(
             textDirection: TextDirection.rtl,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Center(child: LogoImage()),
-                const SizedBox(height: 16),
+                const Center(child: LogoImage()),
                 Align(alignment: Alignment.centerRight, child: helloAgainText),
-                const SizedBox(height: 8),
+                SizedBox(height: 12.h),
                 Align(
                   alignment: Alignment.centerRight,
                   child: Text(
@@ -30,21 +33,26 @@ class Login extends StatelessWidget {
                     style: styleWidgetSpan(),
                   ),
                 ),
-                const SizedBox(height: 12),
+                SizedBox(height: 29.h),
                 const PasswordTextfield(),
-                const SizedBox(height: 24),
-                SaudiPhone(),
-                const SizedBox(height: 10),
+                SizedBox(height: 16.h),
+                const SaudiPhone(),
+                SizedBox(height: 10.h),
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: Text('نسيت كلمة المرور ؟', style: styleWidgetSpan()),
+                  child: TextButton(
+                    onPressed: () {
+                      goTo(context, ForgetPasswordView());
+                    },
+                    child: Text('نسيت كلمة المرور ؟', style: styleWidgetSpan()),
+                  ),
                 ),
-                const SizedBox(height: 26),
+                SizedBox(height: 26.h),
                 FilledButton(
                   onPressed: () {},
                   child: const Text('تسجيل الدخول'),
                 ),
-                const SizedBox(height: 270),
+                SizedBox(height: 196.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -53,11 +61,16 @@ class Login extends StatelessWidget {
                       textDirection: TextDirection.ltr,
                       style: TextStyle(
                         color: Theme.of(context).primaryColor,
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w300,
                       ),
                     ),
-                    TextButton(onPressed: () {}, child: Text('تسجيل الأن')),
+                    TextButton(
+                      onPressed: () {
+                        goTo(context, ClientRegisterView());
+                      },
+                      child: const Text('تسجيل الأن'),
+                    ),
                   ],
                 ),
               ],
